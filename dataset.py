@@ -75,9 +75,7 @@ def read_dataset(file):
     with h5py.File(file, 'r') as h:
         low = np.array(h.get('lows'))
         label = np.array(h.get('labels'))
-        train_low = np.transpose(low, (0, 2, 3, 1))
-        train_label = np.transpose(low, (0, 2, 3, 1))
-        return train_low, train_label
+        return low, label
 
 if __name__ == "__main__":
     low, label = dataset(DATA_PATH)
