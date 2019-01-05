@@ -36,12 +36,11 @@ def train():
                                  verbose=1, save_best_only=True)
     callbacks_list = [checkpoint]
 
-    print(low.shape)
-    print(label.shape)
-    srcnn.fit(low, label,
-              validation_data=(val_low, val_label),
+    srcnn.fit(low, label, validation_data=(val_low, val_label),
+              callbacks=callbacks_list,
               batch_size=batch_size,
               epochs=epochs,
+              shuffle=True,
               verbose=0)
 
 if __name__ == "__main__":
