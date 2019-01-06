@@ -41,7 +41,7 @@ def train():
               batch_size=batch_size,
               epochs=epochs,
               shuffle=True,
-              verbose=0)
+              verbose=1)
 
 if __name__ == "__main__":
     train()
